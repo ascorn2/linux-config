@@ -1,0 +1,179 @@
+@import "macchiato.css";
+
+* {
+  font-family: "JetBrains Mono", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+window#waybar {
+  background-color: @base;
+  border-radius: 8px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border: solid rgba(59, 59, 59, 0.9) 1px;
+}
+
+button {
+ /* background-color: @surface2;*/
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: 2px;
+}
+
+button:hover {
+  border: 1px solid #33ccff;
+  transition-duration: 0.8s;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio, 
+#network,
+#battery,
+#clock{
+  border-radius: 8px;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#clock:hover{
+  background-color: @surface2;
+  border: 1px solid #33ccff;
+  border-radius: 8px;
+  transition-duration: 0.8s;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: @rosewater;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+  background: blue;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+  border: 1px solid red;
+}
+
+#mode {
+  background-color: #64727d;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio {
+  padding: 0 10px;
+}
+
+#pulseaudio {
+  color: @maroon;
+}
+
+#network {
+  color: @yellow;
+}
+
+#temperature {
+  color: @sky;
+}
+
+#battery {
+  color: @green;
+}
+
+#clock {
+  color: @flamingo;
+}
+
+#cpu {
+  color: @peach;
+}
+
+#memory {
+  color: @green;
+}
+
+#window {
+  color: @text;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+  background-color: @base;
+  border-radius: 6px;
+  margin: 2px;
+}
+
+.modules-right {
+  padding: 0px;
+}
+
+.modules-left {
+  padding: 0 10px;
+}
+
+.modules-center {
+  padding: 0 10px;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @sapphire;
+}
+
+@keyframes blink {
+  to {
+    color: #000000;
+  }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#pulseaudio.muted {
+  color: @text;
+}
+
+#workspaces button:hover,
+#workspaces button:focus{
+  background-color: #eb4d4b;
+}
+
+#workspaces button.active {
+  background-color: #eb4d4b;
+  border: 1px solid black;
+  border-radius: 8px;
+ }
+
+tooltip {
+  background-color: @base;
+  border-radius: 8px;
+  transition-duration: 0.8s;
+  opacity: 0.9
+}
+
