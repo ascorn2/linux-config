@@ -1,0 +1,36 @@
+window {
+	background: none;
+}
+
+#box {
+	padding: 4px;
+}
+
+#active button {
+	background-color: rgba(255, 255, 255, 0.15);
+	border-radius: 50%;
+}
+
+button, image {
+	background: none;
+	border-style: none;
+	box-shadow: none;
+	color: #eee;
+}
+
+button {
+	padding: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
+	color: red;
+        font-size: 6px
+}
+
+button:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+	border-radius: 50%;
+}
+
+button:focus {
+	box-shadow: none;
+}
